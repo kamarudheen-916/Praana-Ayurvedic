@@ -58,6 +58,8 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -66,6 +68,8 @@ body {
     background-color: var(--color-bg);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 /* Typography */
@@ -936,6 +940,12 @@ img {
 
     .nav-menu.active {
         right: 0;
+    }
+
+    .nav-link {
+        color: var(--color-text-dark);
+        display: block;
+        padding: var(--spacing-sm) 0;
     }
 
     .hamburger {
