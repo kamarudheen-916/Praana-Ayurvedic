@@ -396,8 +396,8 @@ img {
     /* Removed 80px padding */
     background:
         linear-gradient(135deg,
-            rgba(6, 115, 96, 0.5),
-            rgba(74, 124, 89, 0.4)),
+            rgba(6, 115, 96, 0.3),
+            rgba(74, 124, 89, 0.2)),
         url('../assets/images/hero-ayurveda.png') center/cover no-repeat;
     transition: all var(--transition-slow);
 }
@@ -628,28 +628,24 @@ img {
     aspect-ratio: 4/3;
     box-shadow: var(--shadow-sm);
     transition: var(--transition-base);
+    background: var(--color-bg-dark);
+    /* Fallback color */
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition-slow);
 }
 
 .gallery-item:hover {
-    transform: scale(1.05);
     box-shadow: var(--shadow-lg);
 }
 
-.gallery-placeholder {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, var(--color-primary), var(--color-success));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-white);
-    font-size: 4rem;
-}
-
-.gallery-placeholder p {
-    font-size: 1rem;
-    margin-top: var(--spacing-sm);
+.gallery-item:hover .gallery-img {
+    transform: scale(1.1);
 }
 
 /* Contact Section */
@@ -710,7 +706,7 @@ img {
 .footer {
     background: linear-gradient(135deg, #044a3e 0%, #067360 100%);
     color: var(--color-white);
-    padding: var(--spacing-xxl) 0 var(--spacing-md);
+    padding: var(--spacing-lg) 0 var(--spacing-sm);
     position: relative;
     overflow: hidden;
 }
@@ -726,10 +722,16 @@ img {
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: var(--spacing-xxl);
-    margin-bottom: var(--spacing-xl);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-logo {
+    max-width: 140px;
+    height: auto;
 }
 
 .footer-col {
@@ -747,8 +749,10 @@ img {
 .footer-description {
     font-size: 0.9375rem;
     color: rgba(255, 255, 255, 0.8);
-    line-height: 1.8;
+    line-height: 1.6;
     max-width: 400px;
+    margin: 0;
+    text-align: right;
 }
 
 .footer-title {
@@ -998,7 +1002,14 @@ img {
 
     /* Footer */
     .footer-content {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+
+    .footer-description {
+        text-align: center;
+        margin: 0 auto;
     }
 
     /* WhatsApp Float */
